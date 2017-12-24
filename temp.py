@@ -50,7 +50,7 @@ def find_files():
     device_folders = glob.glob(BASE_DIR + '28*')[0]
 
     for folder in device_folders:
-        device_file = folder + '/w1_slave'
+        device_file = folder[0] + '/w1_slave'
         current_time = str(time.strftime('%X %x %Z'))
         temp_c, temp_f = read_temp(device_file)
         print(str(folder) + current_time + str(temp_c) + ' C, ' + str(temp_f) + ' F')
